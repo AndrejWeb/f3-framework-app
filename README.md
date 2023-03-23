@@ -7,7 +7,7 @@ In this repository I demonstrate how the F3 framework works via a demo app. Take
 
 Pages `Home` and `About` have Lorem Ipsum text, page `Contact` has a contact form. No email gets sent, you can safely click the Send button. On page `Customers` you can see the data pulled from database and displayed on the page.
 
-In a real world F3 app, index.php along with .css, .js, images, font files would be in the public folder of your web hosting, while the rest of the files would be outside the public folder. This is a security measure to prevent visitors from accessing these files directly.
+In a real world F3 app, index.php along with .css, .js, images, font files would be in the public folder of your web hosting (in this repository this is represented by the folder `public`), while the rest of the files would be outside the public folder. This is a security measure to prevent visitors from accessing these files directly.
 
 ![Homepage](https://i.imgur.com/5Qq0C88.jpg)
 ![About](https://i.imgur.com/LlVCvBJ.jpg)
@@ -28,6 +28,8 @@ Rename `.env.example` to `.env` and enter your database credentials.
 
 While in root directory of the project, open a terminal and run this command to start a PHP server
 
-`php -S localhost:8000`
+`php -S localhost:8000 -t public/`
 
 Now you should be able to open the app in browser via `http://localhost:8000` and see the home page. 
+
+In production mode set `DEBUG=0` in `app/config/config.ini` to prevent errors leaking to the public.

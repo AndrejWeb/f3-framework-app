@@ -4,13 +4,13 @@
  * https://aaweb.tech
  */
 
-require 'vendor/autoload.php';
-$db = require 'app/config/db.php';
+require '../vendor/autoload.php';
+$db = require '../app/config/db.php';
 
 $f3 = \Base::instance();
 
 // config
-$f3->config('app/config/config.ini');
+$f3->config('../app/config/config.ini');
 // db
 $f3->set('db', $db);
 
